@@ -98,7 +98,7 @@ def recipe_one(request):
         ],
         "link": "/recipe/1"
     }
-    return HttpResponse('Test #2.')
+    return render(request, 'ledger/recipe.html', {'recipe': recipe})
 
 def recipe_two(request):
 
@@ -136,4 +136,4 @@ def recipe_two(request):
         ],
         "link": "/recipe/2"
     }
-    return HttpResponse('Test #3.')
+    return render(request, 'ledger/recipe.html', {'recipe': recipe})
