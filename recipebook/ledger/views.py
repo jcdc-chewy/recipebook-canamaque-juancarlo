@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse
 
 # Create your views here.
 
-def page_one(request):
+def recipe_list(request):
 
     recipe_list = {
         "recipes": [
@@ -70,7 +70,7 @@ def page_one(request):
     }    
     return HttpResponse('Test #1.')
 
-def page_two(request):
+def recipe_one(request):
 
     recipe = {
         "name": "Recipe 1",
@@ -100,7 +100,7 @@ def page_two(request):
     }
     return HttpResponse('Test #2.')
 
-def page_three(request):
+def recipe_two(request):
 
     recipe = {
         "name": "Recipe 2",
