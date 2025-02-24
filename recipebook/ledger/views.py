@@ -4,8 +4,7 @@ from django.shortcuts import render, HttpResponse
 
 def recipe_list(request):
 
-    recipe_list = {
-        "recipes": [
+    recipes = [
             {
                 "name": "Recipe 1",
                 "ingredients": [
@@ -66,9 +65,8 @@ def recipe_list(request):
                 ],
                 "link": "/recipe/2"
             }
-        ]
-    }    
-    return HttpResponse('Test #1.')
+        ]   
+    return render(request, 'ledger/recipe-list.html', {'recipes': recipes})
 
 def recipe_one(request):
 

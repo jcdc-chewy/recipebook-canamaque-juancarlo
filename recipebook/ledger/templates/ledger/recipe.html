@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-	<h1>Recipe Book: {{ recipe.name }}</h1>
-  	<h2>Ingredients:</h2>
+	<h2>Ingredients for {{ recipe.name }}:</h2>
   	<ul>
     		{% for ingredient in recipe.ingredients %}
       			<li>{{ ingredient.name }}: {{ ingredient.quantity }}</li>
