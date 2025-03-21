@@ -16,6 +16,12 @@
 		</div>
 	</header>
 
+	<div id="page-heading">
+		{% block page_heading %}
+		<h2><u>{% block heading %}{% endblock %}</u></h2>
+		{% endblock %}
+	</div>
+
 	<div id="content">
 		{% block content %}{% endblock %}
 	</div>
@@ -23,4 +29,3 @@
 	{% block scripts %}{% endblock %}
 </body>
 </html>
-
