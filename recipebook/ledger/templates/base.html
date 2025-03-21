@@ -2,14 +2,25 @@
 <head>
 	<link rel="stylesheet" href="style.css">
 	<title>{% block title %}Recipe Book{% endblock %}</title>
-	{% block styles %}
-		<h1>Recipe Book</h1>
-	{% endblock %}
+	{% block styles %}{% endblock %}
 </head>
 <body>
+	<header>
+		<h1>Recipe Book</h1>
+		<div>
+			{% if user.is_authenticated %}
+				<a href="{% url 'logout' %}">Logout</a>
+			{% else %}
+				<a href="{% url 'login' %}">Login</a>
+			{% endif %}
+		</div>
+	</header>
+
 	<div id="content">
 		{% block content %}{% endblock %}
 	</div>
+
 	{% block scripts %}{% endblock %}
 </body>
 </html>
+
