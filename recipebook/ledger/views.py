@@ -12,4 +12,8 @@ def recipe_list(request):
 def recipe_detail(request, recipe_name):
     recipe = Recipe.objects.get(name=recipe_name)
     recipe_ingredients = RecipeIngredient.objects.filter(recipe=recipe)
-    return render(request, 'ledger/recipe.html', {'recipe': recipe, 'recipe_ingredients': recipe_ingredients})
+    return render(request, 'ledger/recipe.html', {
+        'recipe': recipe,
+        'recipe_ingredients': recipe_ingredients,
+        'author': recipe.author,
+    })
