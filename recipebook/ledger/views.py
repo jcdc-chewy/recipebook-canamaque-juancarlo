@@ -42,7 +42,7 @@ def recipe_add(request):
         form = RecipeForm()
         formset = RecipeIngredientFormSet()
 
-    return render(request, 'ledger/recipe_add.html', {
+    return render(request, 'ledger/recipe-form.html', {
         'form': form,
         'formset': formset,
     })
@@ -62,7 +62,7 @@ def add_recipe_image(request, pk):
     else:
         form = RecipeImageForm()
 
-    return render(request, 'ledger/add_recipe_image.html', {
+    return render(request, 'ledger/recipe-image-form.html', {
         'form': form,
         'recipe': recipe
     })
