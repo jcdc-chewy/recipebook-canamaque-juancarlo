@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
 {% block heading %}{{ recipe.name }} Details{% endblock %}
 {% block content %}
 	<h2>Ingredients for {{ recipe.name }}:</h2>
