@@ -9,5 +9,16 @@
       			 <li>{{ recipe_ingredient.quantity }} of {{ recipe_ingredient.ingredient.name }}</li>
 		{% endfor %}
   	</ul>
+	<h2>Images:</h2>
+	<div class="recipe-images">
+		{% for image in recipe_images %}
+			<img src="{{ image.image.url }}" alt="{{ image.description }}">
+		{% empty %}
+			<p>No images available.</p>
+		{% endfor %}
+	</div>
+	{% if user.is_authenticated %}
+		<p><a href="{% url 'add_recipe_image' recipe.pk %}">Add an Image</a></p>
+	{% endif %}
 {% endblock %}
 
