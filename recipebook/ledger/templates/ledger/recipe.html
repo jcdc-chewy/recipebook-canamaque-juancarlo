@@ -17,5 +17,8 @@
 			<p>No images available.</p>
 		{% endfor %}
 	</div>
+	{% if user.is_authenticated %}
+		<p><a href="{% url 'add_recipe_image' recipe.pk %}">Add an Image</a></p>
+	{% endif %}
 {% endblock %}
 
